@@ -1,7 +1,15 @@
 .DS_Store
 .vscode/
-build/
 coverage/
 example/
 node_modules/
+src/
+test/
+.babelrc
+.gitignore
+.npmignore
+.eslintrc.js
+.travis.yml
+.entry.js
 npm-debug.log
+webpack.config.js

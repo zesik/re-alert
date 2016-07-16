@@ -1,6 +1,8 @@
+const webpack = require('webpack');
+
 module.exports = {
   entry: [
-    './index.js'
+    './entry.js'
   ],
   resolve: {
     extensions: ['', '.js', '.jsx', '.css']
@@ -19,8 +21,20 @@ module.exports = {
       loader: 'style-loader!css-loader'
     }]
   },
+  plugins: [
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify('production') })
+  ],
   output: {
-    path: 'build',
-    filename: 'index.js'
+    filename: 'index.js',
+    library: 're-alert',
+    libraryTarget: 'umd'
+  },
+  externals: {
+    react: 'react',
+    'react-addons-css-transition-group': 'react-addons-css-transition-group',
+    'react-dom': 'react-dom',
+    'react-redux': 'react-redux',
+    redux: 'redux',
+    'redux-thunk': 'redux-thunk'
   }
 };

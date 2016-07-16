@@ -105,6 +105,8 @@ These functions display messages with different level, and accept same arguments
 
 ## Release History
 
+* 0.2.0
+  * NPM package now only contains minified JS.
 * 0.1.0
   * First proper release.
 
