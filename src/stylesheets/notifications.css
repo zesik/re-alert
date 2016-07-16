@@ -1,0 +1,118 @@
+#notification-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  z-index: 5000;
+}
+
+#notification-container .notification-item {
+  display: block;
+  position: relative;
+  margin: 20px 20px 0 0;
+  padding: 14px;
+  max-height: 200px;
+  border-left: 4px solid #757575;
+  background-color: #cccccc;
+  color: #000000;
+}
+
+#notification-container .notification-item.notification-information {
+  border-left-color: #1e88e5;
+  background-color: #e3f2fd;
+  color: #0d47a1;
+}
+
+#notification-container .notification-item.notification-success {
+  border-left-color: #43a047;
+  background-color: #e8f5e9;
+  color: #1b5e20;
+}
+
+#notification-container .notification-item.notification-warning {
+  border-left-color: #fb8c00;
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+#notification-container .notification-item.notification-error {
+  border-left-color: #e53935;
+  background-color: #ffebee;
+  color: #b71c1c;
+}
+
+#notification-container .notification-close {
+  float: right;
+  position: relative;
+  width: 14px;
+  height: 14px;
+  margin-right: -6px;
+  margin-top: -6px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#notification-container .notification-close::before, #notification-container .notification-close::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 10px;
+  top: 6px;
+  left: 2px;
+  background-color: #808080;
+}
+
+#notification-container .notification-close::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#notification-container .notification-close::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#notification-container .notification-close:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#notification-container .notification-close:hover::before,
+#notification-container .notification-close:hover::after {
+  background-color: #dfdfdf;
+}
+
+#notification-container .notification-content {
+  margin-right: 16px;
+}
+
+#notification-container .notification-item-enter {
+  right: -320px;
+}
+
+#notification-container .notification-item-enter.notification-item-enter-active {
+  right: 0;
+  transition: right 0.4s ease;
+}
+
+#notification-container .notification-item-leave {
+  opacity: 1;
+  max-height: 200px;
+  margin-top: 20px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+#notification-container .notification-item-leave.notification-item-leave-active {
+  opacity: 0;
+  max-height: 0;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: opacity 0.2s ease-in, max-height 0.2s ease 0.2s, margin-top 0.2s ease 0.2s, padding 0.2s ease 0.2s;
+}

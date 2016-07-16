@@ -1,0 +1,112 @@
+html, body, button, input, select, textarea {
+  font: 14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: 18px;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+input[type="text"], input[type="number"], select, textarea {
+  padding: 6px;
+  outline: none;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+select:not([multiple]) {
+  height: 32px;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus, textarea:focus {
+  box-shadow: 0 0 2px #42a5f5;
+  border: 1px solid #42a5f5;
+}
+
+input[type="text"]:disabled, input[type="number"]:disabled, select:disabled, textarea:disabled {
+  color: #aaaaaa;
+  border-color: rgba(0,0,0,0.1);
+}
+
+input[type="button"], button {
+  padding: 12px 24px;
+  outline: none;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  background-color: #1976d2;
+  cursor: pointer;
+}
+
+input[type="button"]:focus, button:focus {
+  box-shadow: 0 0 2px #42a5f5;
+  background-color: #1565c0;
+}
+
+input[type="button"]:active, button:active {
+  background-color: #0d47a1;
+}
+
+input[type="button"]:disabled, button:disabled {
+  background-color: #64b5f6;
+}
+
+input[type="checkbox"] {
+  margin: 0 8px 0 0;
+}
+
+.github-fork-ribbon {
+  z-index: 4000;
+}
+
+.example-container {
+  width: 468px;
+  margin: 120px auto;
+}
+
+.example-title {
+  text-align: center;
+}
+
+.example-description {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.example-settings {
+  margin-top: 40px;
+}
+
+.setting-line {
+  margin-bottom: 16px;
+}
+
+.setting-line .setting-label {
+  display: inline-block;
+  width: 20%;
+  font-weight: bold;
+}
+
+.setting-line .control {
+  display: inline-block;
+  width: 80%;
+}
+
+.auto-close-number {
+  width: 60px;
+  margin: 0 4px;
+}
+
+.settings-submit {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.example-footer {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 12px;
+}
