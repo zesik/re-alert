@@ -102,6 +102,11 @@ These functions display messages with different level, and accept same arguments
 * `autoCloseDelay` - Time before the notification automatically closes.
   Set to 0 to prevent notification to be closed automatically.
 
+## Release History
+
+* 0.1.0
+  * First proper release.
+
 ## License
 
 [MIT](LICENSE)
