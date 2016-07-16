@@ -1,6 +1,7 @@
 # re-alert
 
 [![Build Status](https://travis-ci.org/zesik/re-alert.svg?branch=master)](https://travis-ci.org/zesik/re-alert)
+[![Coverage Status](https://coveralls.io/repos/github/zesik/re-alert/badge.svg?branch=master)](https://coveralls.io/github/zesik/re-alert?branch=master)
 [![devDependency Status](https://david-dm.org/zesik/re-alert/dev-status.svg)](https://david-dm.org/zesik/re-alert#info=devDependencies)
 
 A light-weight web page notification system for React and Redux.
