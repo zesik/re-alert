@@ -21,6 +21,6 @@ module.exports = {
   },
   output: {
     path: 'build',
-    filename: "output.js"
-  },
+    filename: 'index.js'
+  }
 };

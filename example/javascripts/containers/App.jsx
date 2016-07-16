@@ -3,76 +3,70 @@ import { connect } from 'react-redux';
 import NotificationSystem from '../../..';
 import { updateMessage, updateLevel, updateAutoClose, updateAutoCloseDelay, showNotification } from '../actions';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.showNotification = this.showNotification.bind(this);
-  }
-
-  showNotification() {
-    const { dispatch } = this.props;
-    dispatch(showWarning('hello'));
-  }
-
-  render() {
-    const { message, level, autoClose, autoCloseDelay } = this.props;
-    const { onUpdateMessage, onUpdateLevel, onUpdateAutoClose, onUpdateAutoCloseDelay, onShowNotification} = this.props;
-    return (
-      <div>
-        <NotificationSystem />
-        <div className="example-container">
-          <h1 className="example-title">Re-alert</h1>
-          <div className="example-description">A light-weight notification framework for React and Redux.</div>
-          <div className="example-settings">
-            <div className="setting-line">
-              <label className="setting-label" htmlFor="content">Message</label>
-              <input type="text" id="content" className="control" value={message} onChange={e => onUpdateMessage(e.target.value)} />
-            </div>
-            <div className="setting-line">
-              <label className="setting-label" htmlFor="level">Level</label>
-              <select id="level" value={level} className="control" onChange={e => onUpdateLevel(e.target.value)}>
-                <option value="info">Information</option>
-                <option value="success">Success</option>
-                <option value="warn">Warning</option>
-                <option value="error">Error</option>
-              </select>
-            </div>
-            <div className="setting-line">
-              <div className="setting-label">&nbsp;</div>
-              <div className="control">
-                <input
-                  type="checkbox"
-                  id="auto-close"
-                  checked={autoClose}
-                  onChange={e => onUpdateAutoClose(e.target.checked)}
-                />
-                <label htmlFor="auto-close">Automatically close after</label>
-                <input
-                  type="number"
-                  min="1"
-                  value={autoCloseDelay}
-                  className="auto-close-number"
-                  disabled={!autoClose}
-                  onChange={e => onUpdateAutoCloseDelay(parseInt(e.target.value, 10))}
-                />
-                <label htmlFor="auto-close">seconds</label>
-              </div>
-            </div>
-            <div className="settings-submit">
+function App(props) {
+  const { message, level, autoClose, autoCloseDelay } = props;
+  const { onUpdateMessage, onUpdateLevel, onUpdateAutoClose, onUpdateAutoCloseDelay, onShowNotification } = props;
+  return (
+    <div>
+      <NotificationSystem />
+      <div className="example-container">
+        <h1 className="example-title">Re-alert</h1>
+        <div className="example-description">A light-weight notification framework for React and Redux.</div>
+        <div className="example-settings">
+          <div className="setting-line">
+            <label className="setting-label" htmlFor="content">Message</label>
+            <input
+              type="text"
+              id="content"
+              className="control"
+              value={message}
+              onChange={e => onUpdateMessage(e.target.value)}
+            />
+          </div>
+          <div className="setting-line">
+            <label className="setting-label" htmlFor="level">Level</label>
+            <select id="level" value={level} className="control" onChange={e => onUpdateLevel(e.target.value)}>
+              <option value="info">Information</option>
+              <option value="success">Success</option>
+              <option value="warn">Warning</option>
+              <option value="error">Error</option>
+            </select>
+          </div>
+          <div className="setting-line">
+            <div className="setting-label">&nbsp;</div>
+            <div className="control">
               <input
-                type="button"
-                value="Show Notification"
-                onClick={() => onShowNotification(message, level, autoClose, autoCloseDelay)}
+                type="checkbox"
+                id="auto-close"
+                checked={autoClose}
+                onChange={e => onUpdateAutoClose(e.target.checked)}
               />
+              <label htmlFor="auto-close">Automatically close after</label>
+              <input
+                type="number"
+                min="1"
+                value={autoCloseDelay}
+                className="auto-close-number"
+                disabled={!autoClose}
+                onChange={e => onUpdateAutoCloseDelay(parseInt(e.target.value, 10))}
+              />
+              <label htmlFor="auto-close">seconds</label>
             </div>
           </div>
-          <div className="example-footer">
-            Licensed under MIT
+          <div className="settings-submit">
+            <input
+              type="button"
+              value="Show Notification"
+              onClick={() => onShowNotification(message, level, autoClose, autoCloseDelay)}
+            />
           </div>
         </div>
+        <div className="example-footer">
+          Licensed under MIT
+        </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 App.propTypes = {
