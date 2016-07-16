@@ -1,5 +1,8 @@
 # re-alert
 
+[![Build Status](https://travis-ci.org/zesik/re-alert.svg?branch=master)](https://travis-ci.org/zesik/re-alert)
+[![devDependency Status](https://david-dm.org/zesik/re-alert/dev-status.svg)](https://david-dm.org/zesik/re-alert#info=devDependencies)
+
 A light-weight web page notification system for React and Redux.
 
 ## Dependencies
