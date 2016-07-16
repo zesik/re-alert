@@ -6,6 +6,8 @@
 
 A light-weight web page notification system for React and Redux.
 
+[Demo](https://zesik.com/re-alert/)
+
 ## Dependencies
 
 Re-alert depends on React, Redux, Babel and webpack.
