@@ -21,8 +21,8 @@ class App extends React.Component {
       <div>
         <NotificationSystem />
         <div className="example-container">
-          <h1 className="example-title">React Redux Notification System</h1>
-          <div className="example-description">A very simple notification framework for React and Redux.</div>
+          <h1 className="example-title">Re-alert</h1>
+          <div className="example-description">A light-weight notification framework for React and Redux.</div>
           <div className="example-settings">
             <div className="setting-line">
               <label className="setting-label" htmlFor="content">Message</label>
