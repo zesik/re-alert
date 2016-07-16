@@ -1,5 +1,6 @@
 .DS_Store
-.vscode
-build
-coverage
-node_modules
+.vscode/
+build/
+coverage/
+node_modules/
+npm-debug.log
