@@ -25,6 +25,7 @@ module.exports = {
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify('production') })
   ],
   output: {
+    path: 'lib',
     filename: 'index.js',
     library: 're-alert',
     libraryTarget: 'umd'

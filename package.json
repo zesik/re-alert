@@ -1,6 +1,6 @@
 {
   "name": "re-alert",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A light-weight web page notification system for React and Redux",
   "keywords": [
     "react",
@@ -19,6 +19,7 @@
   "bugs": {
     "url": "https://github.com/zesik/re-alert/issues"
   },
+  "main": "lib/index.js",
   "dependencies": {
     "react": "^15.2.1",
     "react-addons-css-transition-group": "^15.2.1",
