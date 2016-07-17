@@ -10,6 +10,6 @@ test/
 .npmignore
 .eslintrc.js
 .travis.yml
-.entry.js
+entry.js
 npm-debug.log
 webpack.config.js
