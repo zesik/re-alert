@@ -62,6 +62,7 @@
   "scripts": {
     "build": "webpack",
     "test": "mocha --require ignore-styles --compilers js:babel-register test/*.test.js",
-    "coverage": "babel-node node_modules/isparta/bin/isparta cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --require ignore-styles --compilers js:babel-register test/*.test.js -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "coverage": "babel-node node_modules/isparta/bin/isparta cover ./node_modules/mocha/bin/_mocha -- --require ignore-styles --compilers js:babel-register test/*.test.js -R spec",
+    "travis-coverage": "babel-node node_modules/isparta/bin/isparta cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --require ignore-styles --compilers js:babel-register test/*.test.js -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   }
 }

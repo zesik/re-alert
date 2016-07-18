@@ -20,6 +20,20 @@ Re-alert depends on React and Redux. See [package.json](package.json) for more d
 $ npm install --save re-alert
 ```
 
+## Testing
+
+To run tests, execute `test` script with `npm`.
+
+```sh
+$ npm run test
+```
+
+To run coverage tests, execute `coverage` script with `npm`.
+
+```sh
+$ npm run coverage
+```
+
 ## Integration
 
 1. Include the reducer of notification system into your root reducer.
