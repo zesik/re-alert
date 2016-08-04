@@ -1,6 +1,6 @@
 {
   "name": "re-alert",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A light-weight web page notification system for React and Redux",
   "keywords": [
     "react",
@@ -20,13 +20,6 @@
     "url": "https://github.com/zesik/re-alert/issues"
   },
   "main": "lib/index.js",
-  "dependencies": {
-    "react": "^15.2.1",
-    "react-addons-css-transition-group": "^15.2.1",
-    "react-redux": "^4.4.5",
-    "redux": "^3.5.2",
-    "redux-thunk": "^2.1.0"
-  },
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "^6.10.4",
@@ -58,6 +51,13 @@
     "redux-thunk": "^2.1.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0",
+    "react-addons-css-transition-group": "^0.14.0 || ^15.0.0",
+    "react-redux": "^3.0.0 || ^4.0.0",
+    "redux": "^2.0.0 || ^3.0.0",
+    "redux-thunk": "^2.0.0"
   },
   "scripts": {
     "prepublish": "webpack --progress -p",
