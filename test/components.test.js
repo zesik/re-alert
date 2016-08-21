@@ -89,7 +89,7 @@ describe('Re-alert component', () => {
       expect(content.props.children).toBe('test message');
     });
 
-    it('should render defalt notification', () => {
+    it('should render default notification', () => {
       const { output } = setupNotificationItem(0, '', 'test message');
 
       expect(output.type).toBe('div');
