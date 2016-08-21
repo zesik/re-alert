@@ -4,4 +4,4 @@ build/
 coverage/
 node_modules/
 lib/
-npm-debug.log
+npm-debug.log*
