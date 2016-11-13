@@ -4,6 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/zesik/re-alert/badge.svg?branch=master)](https://coveralls.io/github/zesik/re-alert?branch=master)
 [![npm version](https://badge.fury.io/js/re-alert.svg)](https://badge.fury.io/js/re-alert)
 [![devDependency Status](https://david-dm.org/zesik/re-alert/dev-status.svg)](https://david-dm.org/zesik/re-alert#info=devDependencies)
+[![devDependency Status](https://david-dm.org/zesik/re-alert/peer-status.svg)](https://david-dm.org/zesik/re-alert#info=devDependencies)
 
 A light-weight web page notification system for React and Redux.
 
