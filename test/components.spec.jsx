@@ -1,14 +1,12 @@
 import expect from 'expect';
 import React from 'react';
-import { Provider } from 'react-redux';
-import configureMockStore from 'redux-mock-store';
 import TestUtils from 'react-addons-test-utils';
 import NotificationItem from '../src/components/NotificationItem';
 import { NotificationSystem } from '../src/containers/NotificationSystem';
 import * as constants from '../src/constants';
 
-function setupNotificationItem(id, level, message) {
-  const props = { id, level, message, onClose: expect.createSpy() };
+function setupNotificationItem(id, level, message, dangerouslyAllowHTML) {
+  const props = { id, level, message, dangerouslyAllowHTML, onClose: expect.createSpy() };
   const renderer = TestUtils.createRenderer();
   renderer.render(<NotificationItem {...props} />);
   const output = renderer.getRenderOutput();
@@ -111,6 +109,40 @@ describe('Re-alert component', () => {
       close.props.onClick();
       expect(props.onClose.calls.length).toBe(1);
     });
+
+    it('should not render HTML by default', () => {
+      const { output } = setupNotificationItem(0, constants.NOTIFICATION_INFORMATION, 'test &amp; test<br>test');
+
+      expect(output.type).toBe('div');
+      expect(output.props.className).toBe('notification-item notification-information');
+
+      const [close, content] = output.props.children;
+
+      expect(close.type).toBe('div');
+      expect(close.props.className).toBe('notification-close');
+
+      expect(content.type).toBe('div');
+      expect(content.props.className).toBe('notification-content');
+      expect(content.props.dangerouslySetInnerHTML).toNotExist();
+      expect(content.props.children).toBe('test &amp; test<br>test');
+    });
+
+    it('should render HTML if explicitly allowed', () => {
+      const { output } = setupNotificationItem(0, constants.NOTIFICATION_INFORMATION, 'test &amp; test<br>test', true);
+
+      expect(output.type).toBe('div');
+      expect(output.props.className).toBe('notification-item notification-information');
+
+      const [close, content] = output.props.children;
+
+      expect(close.type).toBe('div');
+      expect(close.props.className).toBe('notification-close');
+
+      expect(content.type).toBe('div');
+      expect(content.props.className).toBe('notification-content');
+      expect(content.props.children).toNotExist();
+      expect(content.props.dangerouslySetInnerHTML.__html).toBe('test &amp; test<br>test');
+    });
   });
 
   describe('NotificationSystem', () => {
@@ -130,7 +162,7 @@ describe('Re-alert component', () => {
       expect(output.props.children.props.children.length).toBe(0);
     });
 
-    it('should render notification system with childrens', () => {
+    it('should render notification system with children', () => {
       const { output } = setupNotificationSystem([{ id: 0, message: 'test', level: '' }], 'custom-class');
       expect(output.type).toBe('div');
       expect(output.props.id).toBe('notification-container');

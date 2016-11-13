@@ -4,6 +4,7 @@ export const UPDATE_MESSAGE = 'UPDATE_MESSAGE';
 export const UPDATE_LEVEL = 'UPDATE_LEVEL';
 export const UPDATE_AUTO_CLOSE = 'UPDATE_AUTO_CLOSE';
 export const UPDATE_AUTO_CLOSE_DELAY = 'UPDATE_AUTO_CLOSE_DELAY';
+export const UPDATE_DANGEROUSLY_ALLOW_HTML = 'UPDATE_DANGEROUSLY_ALLOW_HTML';
 
 export function updateMessage(message) {
   return {
@@ -30,6 +31,13 @@ export function updateAutoCloseDelay(autoCloseDelay) {
   return {
     type: UPDATE_AUTO_CLOSE_DELAY,
     autoCloseDelay
+  };
+}
+
+export function updateDangerouslyAllowHTML(dangerouslyAllowHTML) {
+  return {
+    type: UPDATE_DANGEROUSLY_ALLOW_HTML,
+    dangerouslyAllowHTML
   };
 }
 

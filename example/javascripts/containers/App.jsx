@@ -1,25 +1,40 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import NotificationSystem from '../../..';
-import { updateMessage, updateLevel, updateAutoClose, updateAutoCloseDelay, showNotification } from '../actions';
+import {
+  updateMessage,
+  updateLevel,
+  updateAutoClose,
+  updateAutoCloseDelay,
+  updateDangerouslyAllowHTML,
+  showNotification
+} from '../actions';
 
 function App(props) {
-  const { message, level, autoClose, autoCloseDelay } = props;
-  const { onUpdateMessage, onUpdateLevel, onUpdateAutoClose, onUpdateAutoCloseDelay, onShowNotification } = props;
+  const { message, level, autoClose, autoCloseDelay, dangerouslyAllowHTML } = props;
+  const {
+    onUpdateMessage,
+    onUpdateLevel,
+    onUpdateAutoClose,
+    onUpdateAutoCloseDelay,
+    onShowNotification,
+    onUpdateDangerouslyAllowHTML
+  } = props;
   return (
     <div>
-      <NotificationSystem />
+      <NotificationSystem dangerouslyAllowHTML={dangerouslyAllowHTML} />
       <div className="example-container">
         <h1 className="example-title">Re-alert</h1>
         <div className="example-description">A light-weight notification framework for React and Redux.</div>
         <div className="example-settings">
           <div className="setting-line">
             <label className="setting-label" htmlFor="content">Message</label>
-            <input
+            <textarea
               type="text"
               id="content"
               className="control"
               value={message}
+              rows="1"
               onChange={e => onUpdateMessage(e.target.value)}
             />
           </div>
@@ -53,6 +68,18 @@ function App(props) {
               <label htmlFor="auto-close">seconds</label>
             </div>
           </div>
+          <div className="setting-line">
+            <div className="setting-label">&nbsp;</div>
+            <div className="control">
+              <input
+                type="checkbox"
+                id="dangerously-allow-html"
+                checked={dangerouslyAllowHTML}
+                onChange={e => onUpdateDangerouslyAllowHTML(e.target.checked)}
+              />
+              <label htmlFor="dangerously-allow-html">Dangerously allow HTML in all messages</label>
+            </div>
+          </div>
           <div className="settings-submit">
             <input
               type="button"
@@ -74,10 +101,12 @@ App.propTypes = {
   level: React.PropTypes.string.isRequired,
   autoClose: React.PropTypes.bool.isRequired,
   autoCloseDelay: React.PropTypes.number.isRequired,
+  dangerouslyAllowHTML: React.PropTypes.bool.isRequired,
   onUpdateMessage: React.PropTypes.func.isRequired,
   onUpdateLevel: React.PropTypes.func.isRequired,
   onUpdateAutoClose: React.PropTypes.func.isRequired,
   onUpdateAutoCloseDelay: React.PropTypes.func.isRequired,
+  onUpdateDangerouslyAllowHTML: React.PropTypes.func.isRequired,
   onShowNotification: React.PropTypes.func.isRequired
 };
 
@@ -95,6 +124,9 @@ const mapDispatchToProps = dispatch => ({
   },
   onUpdateAutoCloseDelay: autoCloseDelay => {
     dispatch(updateAutoCloseDelay(autoCloseDelay));
+  },
+  onUpdateDangerouslyAllowHTML: dangerouslyAllowHTML => {
+    dispatch(updateDangerouslyAllowHTML(dangerouslyAllowHTML));
   },
   onShowNotification: (message, level, autoClose, autoCloseDelay) => {
     dispatch(showNotification(message, level, autoClose, autoCloseDelay));

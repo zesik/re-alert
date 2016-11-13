@@ -23,7 +23,11 @@ function NotificationItem(props) {
   return (
     <div className={classes}>
       <div className="notification-close" onClick={() => props.onClose(props.id)} />
-      <div className="notification-content">{props.message}</div>
+      {
+        props.dangerouslyAllowHTML ?
+        <div className="notification-content" dangerouslySetInnerHTML={{ __html: props.message }} /> :
+        <div className="notification-content">{props.message}</div>
+      }
     </div>
   );
 }
@@ -32,7 +36,8 @@ NotificationItem.propTypes = {
   id: React.PropTypes.number.isRequired,
   level: React.PropTypes.string.isRequired,
   message: React.PropTypes.string.isRequired,
+  dangerouslyAllowHTML: React.PropTypes.bool,
   onClose: React.PropTypes.func.isRequired
 };
 
-module.exports = NotificationItem;
+export default NotificationItem;

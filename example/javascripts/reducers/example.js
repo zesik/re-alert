@@ -1,10 +1,17 @@
-import { UPDATE_MESSAGE, UPDATE_LEVEL, UPDATE_AUTO_CLOSE, UPDATE_AUTO_CLOSE_DELAY } from '../actions';
+import {
+  UPDATE_MESSAGE,
+  UPDATE_LEVEL,
+  UPDATE_AUTO_CLOSE,
+  UPDATE_AUTO_CLOSE_DELAY,
+  UPDATE_DANGEROUSLY_ALLOW_HTML
+} from '../actions';
 
 const initialState = {
   message: 'Hello from notification!',
   level: 'info',
   autoClose: true,
-  autoCloseDelay: 10
+  autoCloseDelay: 10,
+  dangerouslyAllowHTML: false
 };
 
 function exampleAppReducer(state = initialState, action) {
@@ -24,6 +31,10 @@ function exampleAppReducer(state = initialState, action) {
     case UPDATE_AUTO_CLOSE_DELAY:
       return Object.assign({}, state, {
         autoCloseDelay: action.autoCloseDelay
+      });
+    case UPDATE_DANGEROUSLY_ALLOW_HTML:
+      return Object.assign({}, state, {
+        dangerouslyAllowHTML: action.dangerouslyAllowHTML
       });
     default:
       return state;

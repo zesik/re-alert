@@ -29,6 +29,7 @@ export class NotificationSystem extends React.Component {
               key={item.id}
               level={item.level}
               message={item.message}
+              dangerouslyAllowHTML={this.props.dangerouslyAllowHTML}
               onClose={this.handleCloseNotification}
             />
           )}
@@ -45,12 +46,14 @@ NotificationSystem.propTypes = {
     message: React.PropTypes.string.isRequired
   })).isRequired,
   customClassName: React.PropTypes.string,
+  dangerouslyAllowHTML: React.PropTypes.bool,
   onCloseNotification: React.PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state, ownProps) => ({
   notifications: state.notification.notifications,
-  customClassName: ownProps.customClassName
+  customClassName: ownProps.customClassName,
+  dangerouslyAllowHTML: ownProps.dangerouslyAllowHTML
 });
 
 const mapDispatchToProps = (dispatch) => ({

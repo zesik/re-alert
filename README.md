@@ -65,7 +65,7 @@ include `thunk` middleware when creating store.
           thunkMiddleware
         )
       );
-    };
+    }
     ```
 
 3. Include the re-alert component into your application's JSX.
@@ -81,14 +81,23 @@ include `thunk` middleware when creating store.
     );
     ```
 
-    To customize styles of notifications, include a custom class name for `NotificationSystem`.
+    * To customize styles of notifications, include a custom class name for `NotificationSystem`.
 
-    ```jsx
-    <NotificationSystem customClassName="custom-class" />
-    ```
+      ```jsx
+      <NotificationSystem customClassName="custom-class" />
+      ```
 
-    In CSS file, you can overwrite original CSS with `#notification-container.custom-class` selector.
-    Refers to the [original stylesheet](src/stylesheets/notifications.css) to see what you can overwrite.
+      In CSS file, you can override original CSS with `#notification-container.custom-class` selector.
+      Refer to the [original stylesheet](src/stylesheets/notifications.css) to see what you can override.
+
+    * To allow HTMLs in all notifications, set `dangerouslyAllowHTML` prop to `true` for `NotificationSystem`.
+
+      ```jsx
+      <NotificationSystem dangerouslyAllowHTML={true} />
+      ```
+
+      Allowing HTML is risky as it may open your site to [cross-site scripting (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting) attack.
+      Sanitize data before use it directly when allowing HTML.
 
 ## Quick Example
 
@@ -120,6 +129,8 @@ These functions display messages with different level, and accept same arguments
 
 ## Release History
 
+* 0.3.0
+  * Support HTML in notifications.
 * 0.2.0
   * NPM package now only contains minified JS.
 * 0.1.0
