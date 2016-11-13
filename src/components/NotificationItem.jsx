@@ -22,11 +22,11 @@ function NotificationItem(props) {
   }
   return (
     <div className={classes}>
-      <div className="notification-close" onClick={() => props.onClose(props.id)} />
+      <button className="notification-close" onClick={() => props.onClose(props.id)} />
       {
         props.dangerouslyAllowHTML ?
-        <div className="notification-content" dangerouslySetInnerHTML={{ __html: props.message }} /> :
-        <div className="notification-content">{props.message}</div>
+          <div className="notification-content" dangerouslySetInnerHTML={{ __html: props.message }} /> :
+          <div className="notification-content">{props.message}</div>
       }
     </div>
   );

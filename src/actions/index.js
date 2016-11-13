@@ -27,7 +27,7 @@ export function removeNotification(id) {
 
 function showNotification(level, message, autoCloseDelay) {
   const id = nextNotificationID++;
-  return dispatch => {
+  return (dispatch) => {
     dispatch(appendNotification(id, level, message));
     if (autoCloseDelay > 0) {
       setTimeout(() => dispatch(removeNotification(id)), autoCloseDelay);

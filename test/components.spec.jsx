@@ -31,7 +31,7 @@ describe('Re-alert component', () => {
 
       const [close, content] = output.props.children;
 
-      expect(close.type).toBe('div');
+      expect(close.type).toBe('button');
       expect(close.props.className).toBe('notification-close');
 
       expect(content.type).toBe('div');
@@ -47,7 +47,7 @@ describe('Re-alert component', () => {
 
       const [close, content] = output.props.children;
 
-      expect(close.type).toBe('div');
+      expect(close.type).toBe('button');
       expect(close.props.className).toBe('notification-close');
 
       expect(content.type).toBe('div');
@@ -63,7 +63,7 @@ describe('Re-alert component', () => {
 
       const [close, content] = output.props.children;
 
-      expect(close.type).toBe('div');
+      expect(close.type).toBe('button');
       expect(close.props.className).toBe('notification-close');
 
       expect(content.type).toBe('div');
@@ -79,7 +79,7 @@ describe('Re-alert component', () => {
 
       const [close, content] = output.props.children;
 
-      expect(close.type).toBe('div');
+      expect(close.type).toBe('button');
       expect(close.props.className).toBe('notification-close');
 
       expect(content.type).toBe('div');
@@ -95,7 +95,7 @@ describe('Re-alert component', () => {
 
       const [close, content] = output.props.children;
 
-      expect(close.type).toBe('div');
+      expect(close.type).toBe('button');
       expect(close.props.className).toBe('notification-close');
 
       expect(content.type).toBe('div');
@@ -118,7 +118,7 @@ describe('Re-alert component', () => {
 
       const [close, content] = output.props.children;
 
-      expect(close.type).toBe('div');
+      expect(close.type).toBe('button');
       expect(close.props.className).toBe('notification-close');
 
       expect(content.type).toBe('div');
@@ -135,7 +135,7 @@ describe('Re-alert component', () => {
 
       const [close, content] = output.props.children;
 
-      expect(close.type).toBe('div');
+      expect(close.type).toBe('button');
       expect(close.props.className).toBe('notification-close');
 
       expect(content.type).toBe('div');

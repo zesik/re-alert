@@ -83,6 +83,7 @@ function App(props) {
           <div className="settings-submit">
             <input
               type="button"
+              className="btn"
               value="Show Notification"
               onClick={() => onShowNotification(message, level, autoClose, autoCloseDelay)}
             />

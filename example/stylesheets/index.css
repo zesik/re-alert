@@ -33,7 +33,7 @@ input[type="text"]:disabled, input[type="number"]:disabled, select:disabled, tex
   border-color: rgba(0,0,0,0.1);
 }
 
-input[type="button"], button {
+input[type="button"].btn, button.btn {
   padding: 12px 24px;
   outline: none;
   color: #ffffff;
@@ -43,16 +43,16 @@ input[type="button"], button {
   cursor: pointer;
 }
 
-input[type="button"]:focus, button:focus {
+input[type="button"].btn:focus, button.btn:focus {
   box-shadow: 0 0 2px #42a5f5;
   background-color: #1565c0;
 }
 
-input[type="button"]:active, button:active {
+input[type="button"].btn:active, button.btn:active {
   background-color: #0d47a1;
 }
 
-input[type="button"]:disabled, button:disabled {
+input[type="button"].btn:disabled, button.btn:disabled {
   background-color: #64b5f6;
 }
 

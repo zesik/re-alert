@@ -56,8 +56,8 @@ const mapStateToProps = (state, ownProps) => ({
   dangerouslyAllowHTML: ownProps.dangerouslyAllowHTML
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  onCloseNotification: id => {
+const mapDispatchToProps = dispatch => ({
+  onCloseNotification: (id) => {
     dispatch(removeNotification(id));
   }
 });
